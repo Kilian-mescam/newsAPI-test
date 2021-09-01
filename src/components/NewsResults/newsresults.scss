@@ -1,0 +1,90 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+
+  .newscard { 
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    background-color: rgba(134, 131, 131, 0.308);
+    width: 25%;
+    height: 30rem;
+    border-radius: 15px;
+    margin: 1rem 3rem;
+    color: rgb(32, 11, 32);
+    overflow: hidden;
+
+    .newscard-top {
+      margin: 1rem auto;
+      border-radius: 10px;
+      height: 35%;
+      width: 100%;
+      overflow: hidden;
+
+      .artist-picture {
+        border-radius: 10px;
+        transform: scale(1.6);
+
+      }
+    }
+
+    .newscard-bottom {
+      background-color: #FFF;
+      border-radius: 10px;
+      padding: 1rem;
+      height: 65%;
+      width: 100%;
+
+      h1 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      h3 {
+        padding: 1rem;
+        font-style: italic;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    
+
+
+  }
+}
+
+
+@media (max-width: 1571px) {
+  .row {
+  
+    .newscard { 
+      width: 39%;
+      max-height: 20rem;
+      overflow: hidden;
+  
+    }
+  }
+}
+
+
+@media (max-width: 970px) {
+  .row {
+  
+    .newscard { 
+      width: 44%;
+      max-height: 18rem;
+      margin: 1rem auto;
+      overflow: hidden;
+  
+    }
+  }
+}
