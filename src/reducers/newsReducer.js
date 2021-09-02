@@ -2,7 +2,6 @@ import { SAVE_NEWS } from 'src/actions/news';
 
 const initialState = {
   newsList: [],
-  newsLoaded: false,
 };
 
 function newsReducer(state = initialState, action = {}) {
@@ -11,7 +10,6 @@ function newsReducer(state = initialState, action = {}) {
       return {
         ...state,
         newsList: action.news,
-        newsLoaded: true,
       };
 
     default:

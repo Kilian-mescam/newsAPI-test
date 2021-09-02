@@ -2,7 +2,8 @@ import { UPDATE_SEARCH_VALUE } from 'src/actions/filters';
 
 const initialState = {
   searchInput: '',
-  textInput: null,
+  startDate: '',
+  endDate: '',
 };
 
 function filtersReducer(state = initialState, action = {}) {

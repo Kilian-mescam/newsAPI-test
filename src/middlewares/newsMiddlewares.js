@@ -8,11 +8,23 @@ const newsMiddlewares = (store) => (next) => (action) => {
     case FETCH_NEWS:
 
       const { searchInput } = store.getState().filters;
-      const apiKey  = '77963126be9b4ebb83e8ed8a6aeb5481';
+      const { endDate } = store.getState().filters;
+      const { startDate } = store.getState().filters;
+      
+      console.log(searchInput);
+      let url = `https://newsapi.org/v2/everything?q=${searchInput}`;
+      const apiKeyURL  = '&apiKey=77963126be9b4ebb83e8ed8a6aeb5481';
+      const dateURL = '';
+      const langURL = '';
+      const filterURL = '';
 
-      axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}`)
+      url += apiKeyURL;
+      console.log(url);
+
+      axios.get(url)
+
         .then((response) => {
-          // console.log(response);
+          console.log(response.data.articles);
 
           // aller placer response.data dans le state
           // => on dispatch une action qui sera traitée par le reducer

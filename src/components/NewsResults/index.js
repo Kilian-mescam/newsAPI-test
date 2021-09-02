@@ -1,4 +1,4 @@
-// == Import : npm
+// == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -8,7 +8,7 @@ import './newsresults.scss';
 
 // == Composant
 const NewsResults = ({ news }) => {
-  console.log('NewsResults');
+  console.log('coucou');
   return (
     <div className="news-results">
       <div className="row">
