@@ -1,9 +1,15 @@
-import { UPDATE_SEARCH_VALUE } from 'src/actions/filters';
+import {
+  UPDATE_SEARCH_VALUE,
+  UPDATE_DATED_FROM,
+  UPDATE_DATED_TO,
+  UPDATE_LANGUAGE,
+} from 'src/actions/filters';
 
 const initialState = {
   searchInput: '',
   startDate: '',
   endDate: '',
+  languageValue: '',
 };
 
 function filtersReducer(state = initialState, action = {}) {
@@ -12,6 +18,21 @@ function filtersReducer(state = initialState, action = {}) {
       return {
         ...state,
         searchInput: action.value,
+      };
+    case UPDATE_DATED_FROM:
+      return {
+        ...state,
+        startDate: action.datedFromValue,
+      };
+    case UPDATE_DATED_TO:
+      return {
+        ...state,
+        endDate: action.datedToValue,
+      };
+    case UPDATE_LANGUAGE:
+      return {
+        ...state,
+        languageValue: action.languageValue,
       };
 
     default:

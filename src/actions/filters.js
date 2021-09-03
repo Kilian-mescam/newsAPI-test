@@ -3,6 +3,7 @@ export const UPDATE_SEARCH_VALUE = 'UPDATE_SEARCH_VALUE';
 export const UPDATE_DATED_FROM = 'UPDATE_DATED_FROM';
 export const UPDATE_DATED_TO = 'UPDATE_DATED_TO';
 export const MANAGE_SUBMIT = 'MANAGE_SUBMIT';
+export const UPDATE_LANGUAGE = 'UPDATE_LANGUAGE';
 
 // action creators
 export const updateSearchValue = (value) => ({
@@ -10,14 +11,19 @@ export const updateSearchValue = (value) => ({
   value: value,
 });
 
-export const updateDatedFrom = (value) => ({
+export const updateDatedFrom = (datedFromValue) => ({
   type: UPDATE_DATED_FROM,
-  value: value,
+  datedFromValue: datedFromValue,
 });
 
-export const updateDatedTo = (value) => ({
+export const updateLanguage = (languageValue) => ({
+  type: UPDATE_LANGUAGE,
+  languageValue: languageValue,
+});
+
+export const updateDatedTo = (datedToValue) => ({
   type: UPDATE_DATED_TO,
-  value: value,
+  datedToValue: datedToValue,
 });
 
 export const manageSubmit = () => ({

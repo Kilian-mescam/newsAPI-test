@@ -2,7 +2,13 @@ import { connect } from 'react-redux';
 // on importe le composant de présentation
 import Filters from 'src/components/Filters';
 
-import { updateSearchValue, manageSubmit } from '../../actions/filters';
+import {
+  updateSearchValue,
+  updateDatedFrom,
+  updateDatedTo,
+  updateLanguage,
+  manageSubmit,
+} from '../../actions/filters';
 
 import { fetchNews } from '../../actions/news';
 
@@ -13,6 +19,7 @@ const mapStateToProps = (state) => ({
   search: state.filters.searchInput,
   endDate: state.filters.endDate,
   startDate: state.filters.startDate,
+  languageValue: state.filters.languageValue,
 });
 
 // === mapDispatchToProps
@@ -24,14 +31,19 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateSearchValue(value);
     dispatch(action);
   },
-  updateDatedFrom: (value) => {
+  updateDatedFrom: (datedFromValue) => {
     // console.log(`newValue=${newValue}, name=${name}`);
-    const action = updateDatedFrom(value);
+    const action = updateDatedFrom(datedFromValue);
     dispatch(action);
   },
-  updateDatedTo: (value) => {
+  updateDatedTo: (datedToValue) => {
     // console.log(`newValue=${newValue}, name=${name}`);
-    const action = updateDatedTo(value);
+    const action = updateDatedTo(datedToValue);
+    dispatch(action);
+  },
+  updateLanguage: (languageValue) => {
+    // console.log(`newValue=${newValue}, name=${name}`);
+    const action = updateLanguage(languageValue);
     dispatch(action);
   },
   manageSubmit: () => {
