@@ -23,7 +23,7 @@ const Filters = ({
     { key: 'ar', value: 'ar', text: 'Arabe' },
     { key: 'de', value: 'de', text: 'Allemand' },
     { key: 'en', value: 'en', text: 'Anglais' },
-    { key: 'es', value: 'es', text: 'Estonie' },
+    { key: 'es', value: 'es', text: 'Espagnol' },
     { key: 'fr', value: 'fr', text: 'Français' },
     { key: 'he', value: 'he', text: 'Hébreu' },
     { key: 'it', value: 'it', text: 'Italien' },
