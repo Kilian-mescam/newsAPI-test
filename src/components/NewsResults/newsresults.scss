@@ -1,4 +1,5 @@
 .row {
+  margin-top: 10rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,23 +12,31 @@
     font-family: 'Montserrat', sans-serif;
     border: none;
     background-color: rgba(134, 131, 131, 0.308);
-    width: 25%;
-    height: 30rem;
+    width: 27%;
+    height: 42rem;
     border-radius: 15px;
-    margin: 1rem 3rem;
+    margin: 1rem auto;
     color: rgb(32, 11, 32);
     overflow: hidden;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #e6326593;
+      cursor: pointer;
+      transition: 0.5s;
+    }
 
     .newscard-top {
       margin: 1rem auto;
       border-radius: 10px;
-      height: 35%;
+      height: 30%;
       width: 100%;
       overflow: hidden;
 
       .artist-picture {
+        margin-top: 2.5rem;
         border-radius: 10px;
-        transform: scale(1.6);
+        transform: scale(2.2);
 
       }
     }
@@ -36,7 +45,7 @@
       background-color: #FFF;
       border-radius: 10px;
       padding: 1rem;
-      height: 65%;
+      height: 70%;
       width: 100%;
 
       h1 {
@@ -55,6 +64,29 @@
         font-size: 16px;
         font-weight: 400;
       }
+
+      .date {
+        margin-top: 2rem;
+        height: 3rem;
+        text-align: left;
+        .date-titre {
+          font-size: 18px;
+          font-weight: 600;
+          display: block;
+        }
+
+        .date-value {
+          margin-top: 5px;
+          display: block;
+        }
+      }
+
+      .source {
+        margin-top: 2rem;
+        font-style: italic;
+        display: block;
+text-align: left;
+      }
     }
     
 
@@ -62,29 +94,128 @@
   }
 }
 
-
-@media (max-width: 1571px) {
-  .row {
-  
-    .newscard { 
-      width: 39%;
-      max-height: 20rem;
-      overflow: hidden;
-  
-    }
-  }
-}
-
-
 @media (max-width: 970px) {
   .row {
   
     .newscard { 
-      width: 44%;
-      max-height: 18rem;
-      margin: 1rem auto;
+      width: 39%;
+      max-height: 38rem;
       overflow: hidden;
+
+
+    .newscard-top {
+
+
+      .artist-picture {
+
+
+      }
+    }
+
+    .newscard-bottom {
+      height: rem;
+
+      h1 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      h3 {
+        padding: 0.5rem;
+        font-style: italic;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .date {
+        margin-top: 2rem;
+        height: 3rem;
+        text-align: left;
+        .date-titre {
+          font-size: 14px;
+        }
+
+        .date-value {
+        font-size: 12px;
+        }
+      }
+
+      .source {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
   
     }
   }
 }
+
+
+@media (max-width: 425px) {
+  .row {
+  
+    .newscard { 
+      width: 80%;
+      height: 32rem;
+      padding: 1rem;
+      margin: 1rem auto;
+
+    .newscard-top {
+
+    }
+
+    .newscard-bottom {
+      height: 18rem;
+
+      h1 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      h3 {
+        padding: 0.5rem;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  
+    }
+  }
+}
+
+
+@media (max-width: 320px) {
+  .row {
+  
+    .newscard { 
+
+    .newscard-bottom {
+
+      h1 {
+        font-size: 14px;
+      }
+
+      h3 {
+        font-size: 14px;
+
+      }
+
+      p {
+        font-size: 10px;
+      }
+    }
+  
+    }
+  }
+}
+

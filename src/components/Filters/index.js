@@ -15,23 +15,24 @@ const Filters = ({
   endDate,
   startDate,
   updateLanguage,
+  updateSortBy,
 }) => {
   console.log('Filters');
 
   const languageOptions = [
-    { key: 'ar', value: 'ar', text: 'Arabe-ar' },
-    { key: 'de', value: 'de', text: 'Allemand-de' },
-    { key: 'en', value: 'en', text: 'Anglais-en' },
-    { key: 'es', value: 'es', text: 'Estonie-es' },
-    { key: 'fr', value: 'fr', text: 'Français-fr' },
-    { key: 'he', value: 'he', text: 'Hébreu-he' },
-    { key: 'it', value: 'it', text: 'Italien-it' },
-    { key: 'nl', value: 'nl', text: 'Hollande-nl' },
-    { key: 'no', value: 'no', text: 'Norvège-no' },
-    { key: 'pt', value: 'pt', text: 'Portugais-pt' },
-    { key: 'ru', value: 'ru', text: 'Russe-ru' },
-    { key: 'se', value: 'se', text: 'sami du Nord-se' },
-    { key: 'zh', value: 'zh', text: 'Chinois-zh' },
+    { key: 'ar', value: 'ar', text: 'Arabe' },
+    { key: 'de', value: 'de', text: 'Allemand' },
+    { key: 'en', value: 'en', text: 'Anglais' },
+    { key: 'es', value: 'es', text: 'Estonie' },
+    { key: 'fr', value: 'fr', text: 'Français' },
+    { key: 'he', value: 'he', text: 'Hébreu' },
+    { key: 'it', value: 'it', text: 'Italien' },
+    { key: 'nl', value: 'nl', text: 'Hollande' },
+    { key: 'no', value: 'no', text: 'Norvège' },
+    { key: 'pt', value: 'pt', text: 'Portugais' },
+    { key: 'ru', value: 'ru', text: 'Russe' },
+    { key: 'se', value: 'se', text: 'sami du Nord' },
+    { key: 'zh', value: 'zh', text: 'Chinois' },
   ];
 
   // const languageValueitem = languageOptions.map((languageOptionItem) => languageOptionItem);
@@ -100,7 +101,7 @@ const Filters = ({
               updateLanguage(event.currentTarget.value);
             }}
           >
-            <option value="0">Langue</option>
+            <option value="0" disabled selected value>Langue</option>
             {languageOptions.map((languageItem) => (
               <option
                 key={languageItem.key}
@@ -112,11 +113,18 @@ const Filters = ({
 
           </select>
 
-          <select name="filter-type" id="filter-select" className="select-tri">
-            <option value="6">Par type de tri</option>
-            <option value="7">Par popularité</option>
-            <option value="8">Pertinence</option>
-            <option value="9">Dates</option>
+          <select
+            name="filter-type"
+            id="filter-select"
+            className="select-tri"
+            onChange={(event) => {
+              updateSortBy(event.currentTarget.value);
+            }}
+          >
+            <option value="0" disabled selected value>Trier par</option>
+            <option value="popularity">Popularité</option>
+            <option value="relevancy">Pertinence</option>
+            <option value="publishedAt">Dates</option>
           </select>
         </div>
         <button
@@ -140,6 +148,7 @@ Filters.propTypes = {
   manageSubmit: PropTypes.func.isRequired,
   loadNews: PropTypes.func.isRequired,
   updateLanguage: PropTypes.func.isRequired,
+  updateSortBy: PropTypes.func.isRequired,
 };
 
 // Valeurs par défaut pour les props

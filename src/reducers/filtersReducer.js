@@ -3,6 +3,7 @@ import {
   UPDATE_DATED_FROM,
   UPDATE_DATED_TO,
   UPDATE_LANGUAGE,
+  UPDATE_SORT_BY,
 } from 'src/actions/filters';
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
   startDate: '',
   endDate: '',
   languageValue: '',
+  sortByValue: '',
 };
 
 function filtersReducer(state = initialState, action = {}) {
@@ -18,6 +20,11 @@ function filtersReducer(state = initialState, action = {}) {
       return {
         ...state,
         searchInput: action.value,
+      };
+    case UPDATE_SORT_BY:
+      return {
+        ...state,
+        sortByValue: action.sortByValue,
       };
     case UPDATE_DATED_FROM:
       return {

@@ -11,15 +11,15 @@ const newsMiddlewares = (store) => (next) => (action) => {
       const { endDate } = store.getState().filters;
       const { startDate } = store.getState().filters;
       const { languageValue } = store.getState().filters;
-      const { sortBy } = store.getState().filters;
+      const { sortByValue } = store.getState().filters;
 
       console.log(searchInput);
       let url = `https://newsapi.org/v2/everything?q=${searchInput}`;
       const apiKeyURL  = '&apiKey=77963126be9b4ebb83e8ed8a6aeb5481';
-      const startDateURL = `&from${startDate}`;
-      const endDateURL = `&to${endDate}`;
-      const langURL = `&country${languageValue}`;
-      const sortByURL = `&sortBy=${sortBy}`;
+      const startDateURL = `&from=${startDate}`;
+      const endDateURL = `&to=${endDate}`;
+      const langURL = `&language=${languageValue}`;
+      const sortByURL = `&sortBy=${sortByValue}`;
 
       console.log(endDate);
       url += startDateURL;

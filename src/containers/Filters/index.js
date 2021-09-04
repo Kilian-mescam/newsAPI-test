@@ -7,6 +7,7 @@ import {
   updateDatedFrom,
   updateDatedTo,
   updateLanguage,
+  updateSortBy,
   manageSubmit,
 } from '../../actions/filters';
 
@@ -20,6 +21,7 @@ const mapStateToProps = (state) => ({
   endDate: state.filters.endDate,
   startDate: state.filters.startDate,
   languageValue: state.filters.languageValue,
+  sortByValue: state.filters.sortByValue,
 });
 
 // === mapDispatchToProps
@@ -44,6 +46,11 @@ const mapDispatchToProps = (dispatch) => ({
   updateLanguage: (languageValue) => {
     // console.log(`newValue=${newValue}, name=${name}`);
     const action = updateLanguage(languageValue);
+    dispatch(action);
+  },
+  updateSortBy: (sortByValue) => {
+    // console.log(`newValue=${newValue}, name=${name}`);
+    const action = updateSortBy(sortByValue);
     dispatch(action);
   },
   manageSubmit: () => {
