@@ -8,7 +8,7 @@ import './newsresults.scss';
 
 // == Composant
 const NewsResults = ({ news }) => {
-  console.log('coucou');
+  console.log('init newsresults');
   return (
     <div className="news-results">
       <div className="row">

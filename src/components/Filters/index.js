@@ -17,8 +17,6 @@ const Filters = ({
   updateLanguage,
   updateSortBy,
 }) => {
-  console.log('Filters');
-
   const languageOptions = [
     { key: 'ar', value: 'ar', text: 'Arabe' },
     { key: 'de', value: 'de', text: 'Allemand' },
@@ -34,10 +32,6 @@ const Filters = ({
     { key: 'se', value: 'se', text: 'sami du Nord' },
     { key: 'zh', value: 'zh', text: 'Chinois' },
   ];
-
-  // const languageValueitem = languageOptions.map((languageOptionItem) => languageOptionItem);
-
-  console.log(languageOptions[0].text);
 
   return (
     <div className="filters">
