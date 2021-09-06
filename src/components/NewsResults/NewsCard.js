@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './newsresults.scss';
+import { getDateString } from 'src/utils';
 
 // == Composant
 const NewsCard = ({
@@ -25,7 +26,7 @@ const NewsCard = ({
           <p>{description}</p>
           <div className="date">
             <span className="date-titre">Date de publication : </span>
-            <span className="date-value">{publishedAt}</span>
+            <span className="date-value">{getDateString(publishedAt)}</span>
           </div>
           <span className="source">Source : {source.name}</span>
         </div>
@@ -43,7 +44,6 @@ NewsCard.propTypes = {
   url: PropTypes.string.isRequired,
   publishedAt: PropTypes.string.isRequired,
   source: PropTypes.shape({
-    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
 };

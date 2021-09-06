@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { FETCH_NEWS, saveNews } from '../actions/news';
+import { BASE_URL } from '../utils';
 
 const newsMiddlewares = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
@@ -14,7 +15,7 @@ const newsMiddlewares = (store) => (next) => (action) => {
       const { sortByValue } = store.getState().filters;
 
       console.log(searchInput);
-      let url = `https://newsapi.org/v2/everything?q=${searchInput}`;
+      let url = `${BASE_URL}?q=${searchInput}`;
       const apiKeyURL  = '&apiKey=77963126be9b4ebb83e8ed8a6aeb5481';
       const startDateURL = `&from=${startDate}`;
       const endDateURL = `&to=${endDate}`;
