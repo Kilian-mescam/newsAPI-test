@@ -6,6 +6,8 @@ import {
   UPDATE_SORT_BY,
 } from 'src/actions/filters';
 
+// ici sont placés mes initial state dont je vais me servir lors de la recherche et du tri
+
 const initialState = {
   searchInput: '',
   startDate: '',

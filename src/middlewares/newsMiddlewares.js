@@ -1,3 +1,4 @@
+// création du fichier middleware pour requete api
 import axios from 'axios';
 import { FETCH_NEWS, saveNews } from '../actions/news';
 import { BASE_URL } from '../utils';
@@ -14,6 +15,7 @@ const newsMiddlewares = (store) => (next) => (action) => {
       const { languageValue } = store.getState().filters;
       const { sortByValue } = store.getState().filters;
 
+      // j'effectue mon tri grâce à l'url
       console.log(searchInput);
       let url = `${BASE_URL}?q=${searchInput}`;
       const apiKeyURL  = '&apiKey=77963126be9b4ebb83e8ed8a6aeb5481';
@@ -22,6 +24,7 @@ const newsMiddlewares = (store) => (next) => (action) => {
       const langURL = `&language=${languageValue}`;
       const sortByURL = `&sortBy=${sortByValue}`;
 
+      // j'additionne à l'url les differents tri lorsque ceux-ci sont rempli par les éléménts select
       console.log(endDate);
       url += startDateURL;
       url += endDateURL;
